@@ -32,6 +32,7 @@ router.post("/", (req, res) => {
 
   return res.json({ todo: newTodo });
 });
+// 새로운 todo를 생성하는 코드
 
 router.get("/", (req, res) => {
   return res.json({ todos });
