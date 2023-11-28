@@ -1,6 +1,7 @@
 const express = require("express");
 // import express from "express";
 // 문법이 두 가지가 있음
+const cors = require("cors");
 const todosRouter = require("./routes/todos");
 
 const app = express(); // app으로 변수를 담아서 사용
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // 위 두 줄은 상대방이 보낸 json 데이터를 받는 역할을 함
 
+app.use(cors());
 app.use("/todos", todosRouter);
 // todosRouter를 사용하겠다는 의미
 
